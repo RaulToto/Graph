@@ -28,3 +28,37 @@ bool Graph<VertexType,EdgeType>::isEmpty()
 {
     return this->firstPointerToVertex==nullptr;
 }
+
+template<typename VertexType, typename EdgeType>
+
+Vertex<VertexType, EdgeType> *Graph<VertexType,EdgeType>::findVertex(VertexType d)
+{
+    Vertex<VertexType,EdgeType> *temp=firstPointerToVertex;
+    while (temp->getData()==d) {
+        temp=temp->pointerToNextVertex;
+    }
+}
+
+template<typename VertexType, typename EdgeType>
+void Graph<VertexType,EdgeType>::insertEdge(Vertex<VertexType, EdgeType> origin, Vertex<VertexType, EdgeType> destyne, EdgeType d)
+{
+    Edge<VertexType,EdgeType> *newEdge=new Edge<VertexType,EdgeType>(d);
+
+}
+
+template<typename VertexType, typename EdgeType>
+void Graph<VertexType,EdgeType>::insertVertex(VertexType d)
+{
+    Vertex<VertexType,EdgeType> *newVertex = new Vertex<VertexType,EdgeType>(d);
+    if(isEmpty())
+    {
+        this->firstPointerToVertex=lastPointerToVertex=newVertex;
+    }
+    else
+    {
+        this->lastPointerToVertex->pointerToNextVertex=newVertex;
+        this->lastPointerToVertex=newVertex;
+    }
+
+}
+

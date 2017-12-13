@@ -9,7 +9,8 @@ class Edge
 {
     friend class Graph<VertexType,EdgeType>;
 public:
-    Edge();
+    Edge(EdgeType);
+    EdgeType getData();
 private:
     EdgeType edgeData;
     Vertex<VertexType,EdgeType> *pointerToNextVertex;
