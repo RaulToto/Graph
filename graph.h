@@ -13,7 +13,7 @@ public:
     int getSize();
     bool isEmpty();
     Vertex<VertexType,EdgeType> * findVertex(VertexType);
-    void insertEdge(Vertex<VertexType,EdgeType>,Vertex<VertexType,EdgeType>,EdgeType);
+    void insertEdge(Vertex<VertexType,EdgeType>*,Vertex<VertexType,EdgeType>*,EdgeType);
     void insertVertex(VertexType);
 private:
     Vertex<VertexType,EdgeType> *firstPointerToVertex;

@@ -40,10 +40,23 @@ Vertex<VertexType, EdgeType> *Graph<VertexType,EdgeType>::findVertex(VertexType 
 }
 
 template<typename VertexType, typename EdgeType>
-void Graph<VertexType,EdgeType>::insertEdge(Vertex<VertexType, EdgeType> origin, Vertex<VertexType, EdgeType> destyne, EdgeType d)
+void Graph<VertexType,EdgeType>::insertEdge(Vertex<VertexType, EdgeType> *origin, Vertex<VertexType, EdgeType> *destyne, EdgeType d)
 {
     Edge<VertexType,EdgeType> *newEdge=new Edge<VertexType,EdgeType>(d);
-
+    Edge<VertexType,EdgeType> *temp=origin->pointerToNextEdge;
+    if(temp)
+    {
+        origin->pointerToNextEdge=newEdge;
+        newEdge->pointerToNextVertex=destyne;
+    }
+    else
+    {
+        while (temp) {
+            temp=temp->pointerToNextEdge;
+        }
+        temp->pointerToNextEdge=newEdge;
+        newEdge->pointerToNextVertex=destyne;
+    }
 }
 
 template<typename VertexType, typename EdgeType>
