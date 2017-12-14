@@ -34,7 +34,8 @@ HEADERS += \
         mainwindow.h \
     graph.h \
     vertex.h \
-    edge.h
+    edge.h \
+    fibonacciheap.h
 
 FORMS += \
         mainwindow.ui
